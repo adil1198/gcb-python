@@ -13,7 +13,7 @@ steps:
     args: ['push',  'us-central1-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/myimage:$SHORT_SHA']
 
   # Deploy to Cloud Run
-  - name: 'gcr.io/cloud-builders/gcloud'
+  - name: google/cloud-sdk
     args: ['gcloud', 'run', 'deploy', 'helloworld', '--region', 'us-central1', '--image=us-central1-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/myimage:$SHORT_SHA', '--port', '8000', '--platform', 'managed', '--allow-unauthenticated']
 images:
   - us-central1-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/myimage:$SHORT_SHA
