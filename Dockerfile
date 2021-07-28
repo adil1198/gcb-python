@@ -18,6 +18,6 @@ RUN apt-get -y update && \
     apt-get -y update && \
     apt-get -y install docker-ce=${DOCKER_VERSION} docker-ce-cli=${DOCKER_VERSION}
 
-EXPOSE 3000
+EXPOSE 8000
 
 ENTRYPOINT ["/usr/bin/docker"]
